@@ -9,7 +9,7 @@ const Categories = () => {
     { id :2,name: "Homme", icon: "HommeIcon" },
     { id :3,name: "Electromenager", icon: "ElectromenagerIcon" },
     { id :4,name: "Eléctroniques", icon: "Eléctroniques" },
-
+    { id :5,name: "Autres", icon: "autres" },
   ];
   return (
     <div className="mt-2 mb-1">
@@ -26,9 +26,8 @@ const Categories = () => {
       {!isHidden && (
         <div className="bg-white absolute z-20 py-2 shadow-lg w-fit flex flex-col gap-2 justify-start items-start">
             {categories.map((cat, index) => (
-              <Link to={`/category/${cat.id}`} key={index} className="flex hover:bg-gray-400 hover:bg-opacity-20 w-full gap-2 px-2 pr-10 py-1 flex-row">
+                //  if the category is clicked, set the category to the name of the category and dont navigate to any page (just filtrage)
                 <button
-                
                 key={index}
                 onClick={() => {
                     setCategoty(cat.name);
@@ -36,13 +35,15 @@ const Categories = () => {
                 }}
                 className="flex hover:bg-gray-400 hover:bg-opacity-20 w-full gap-2 px-2 pr-10 py-1 flex-row"
                 >
-                  
                 <Category />
                 <p>{cat.name}</p>
-                
                 </button>
-                </Link>
-               
+
+                // if the category is clicked, navigate to the page of the category
+                // <Link to={`/category/${cat.id}`} key={index} className="flex hover:bg-gray-400 hover:bg-opacity-20 w-full gap-2 px-2 pr-10 py-1 flex-row">
+                //     <Category />
+                //     <p>{cat.name}</p>
+                // </Link>
             ))}
         </div>
       )}

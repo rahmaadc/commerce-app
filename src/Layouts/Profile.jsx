@@ -8,7 +8,7 @@ const Profile = () => {
 
   const [user, setUser] = useState({
     id: 1,
-    role: 1, // 1 for costumer, 2 for seller , 3 for admin
+    role: 2, // 1 for costumer, 2 for seller , 3 for admin
     name: "Sarah",
     lastname: "Smith",
     email: "sarasmith@gmail.com",

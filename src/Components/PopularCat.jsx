@@ -5,7 +5,7 @@ const Popularcat = () => {
     name: "name",
     email: "email",
     password: "password",
-    role: 1, // 1 for costumer , 2 for vendeur , 3 for admin
+    role: 3, // 1 for costumer , 2 for vendeur , 3 for admin
   };
 
   const categories = [

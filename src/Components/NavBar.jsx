@@ -10,9 +10,9 @@ const Navbar = () => {
     name : "name",
     email : "email",
     password : "password" ,
-    role :  2, // 1 for costumer , 2 for vendeur , 3 for admin
+    role :  1, // 1 for costumer , 2 for vendeur , 3 for admin
   }) // user object [id, name, email, password, ...] (Redux or Context API can be used here)
-  const [isAuth, setIsAuth] = useState(false); // check if user is authenticated (Redux or Context API can be used here)
+  const [isAuth, setIsAuth] = useState(); // check if user is authenticated (Redux or Context API can be used here)
   const [search, setSearch] = useState("");
   return (
     <div>
@@ -21,11 +21,15 @@ const Navbar = () => {
         bg-white flex flex-col justify-start items-start pb-2"
       >
         <div className="flex w-full flex-row justify-between sm:gap-8 gap-1 items-center">
-          <div className="flex items-center justify-start gap-2">
+          <div className="flex items-center justify-start ">
             <Link to={user.role === 3 ? `/admin` : `/`}>
-            <Logo />
+            <img
+                className="bg-cover object-cover w-12 h-12 md:w-24 md:h-32 rounded-full"
+                src="./src/Pics/logo.png"
+                alt=""
+              />
             </Link>
-            <h1 className="txt sm:inline-block hidden uppercase">Logo</h1>
+            <h1 className="txt sm:inline-block hidden uppercase">SouQ</h1>
           </div>
 
           <form onSubmit={()=>{
@@ -89,7 +93,10 @@ const Navbar = () => {
           }
          
         </div>
+        <div className="flex justify-center items-center">
         <Categories />
+        </div>
+       
       </div>
       <Outlet />
     </div>
