@@ -1,4 +1,4 @@
-import { Logo, NotificationsIcon ,ProfileIcon, SearchIcon, ShopIcon } from "../public/Svgs";
+import { NotificationsIcon ,ProfileIcon, SearchIcon, ShopIcon } from "../public/Svgs";
 import { useState } from "react";
 import Categories from "./Categories";
 import { Outlet, Link, useNavigate } from "react-router-dom";
@@ -10,7 +10,7 @@ const Navbar = () => {
     name : "name",
     email : "email",
     password : "password" ,
-    role :  1, // 1 for costumer , 2 for vendeur , 3 for admin
+    role : 1, // 1 for costumer , 2 for vendeur , 3 for admin
   }) // user object [id, name, email, password, ...] (Redux or Context API can be used here)
   const [isAuth, setIsAuth] = useState(); // check if user is authenticated (Redux or Context API can be used here)
   const [search, setSearch] = useState("");
@@ -18,18 +18,18 @@ const Navbar = () => {
     <div>
       <div
         className="sm:px-8 sm:py-1 px-3 py-2 w-calc(100% - 40px) 
-        bg-white flex flex-col justify-start items-start pb-2"
+        bg-white flex flex-col justify-center items-center pb-2"
       >
-        <div className="flex w-full flex-row justify-between sm:gap-8 gap-1 items-center">
-          <div className="flex items-center justify-start ">
+      <div className="flex w-full flex-row justify-between sm:gap-8 gap-1 items-center">
+          <div className="flex items-center justify-start gap-2 ">
             <Link to={user.role === 3 ? `/admin` : `/`}>
             <img
-                className="bg-cover object-cover w-12 h-12 md:w-24 md:h-32 rounded-full"
+                className="bg-cover object-cover w-12 h-12 md:w-24 md:h-24 "
                 src="./src/Pics/logo.png"
                 alt=""
               />
             </Link>
-            <h1 className="txt sm:inline-block hidden uppercase">SouQ</h1>
+            <h1 className=" pl- txt sm:inline-block hidden uppercase">SOUG L'BLED</h1>
           </div>
 
           <form onSubmit={()=>{

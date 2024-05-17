@@ -2,7 +2,11 @@ import { LogoIcon , EmailIcon , PhoneIcon , FacebookIcon , LinkedinIcon , Twitte
 const Footer = () => {
   return (
     <div className="bg-[#474747] p-4 grid md:grid-cols-4 lil:grid-cols-2 grid-cols-1 gap-8 justify-evenly sm:justify-items-center  items-start">
-      <LogoIcon />
+       <img
+                className="bg-cover object-cover w-12 h-12 md:w-24 md:h-24 "
+                src="./src/Pics/logo.png"
+                alt=""
+              />
       <div className="flex flex-col justify-start items-start gap-3">
         <h1 className="text-xl text-white font-semibold">Information</h1>
         <a href="#"><p className="text-sm text-white">notre group</p></a>

@@ -34,7 +34,7 @@ const Popularcat = () => {
             <Link
               to={
                 user.role === 3
-                  ? `/admin/category/${category.id}`
+                  ? `/admin/categories`
                   : `/category/${category.id}`
               }
             >
